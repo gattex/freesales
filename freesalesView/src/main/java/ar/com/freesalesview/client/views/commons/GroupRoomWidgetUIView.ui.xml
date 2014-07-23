@@ -1,0 +1,11 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:custom="urn:import:ar.com.freesalesview.client.utils.widgets">
+	<g:HTMLPanel>
+		<li class="group wrap">
+			<input type="checkbox" ui:field="checkGroupName"/><label ui:field="groupName"/>
+					<custom:UlListPanel ui:field="roomsUI"/>
+		</li>
+	</g:HTMLPanel>
+</ui:UiBinder> 

@@ -1,0 +1,35 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:security="http://www.springframework.org/schema/security"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+          http://www.springframework.org/schema/security
+          http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+ 
+	 <security:http auto-config='true' use-expressions="true">
+	 	<security:anonymous/>
+    	<security:intercept-url pattern="/index.jsp**" access="permitAll"/>
+    	<security:intercept-url pattern="/templates/account-create.jsp**" access="permitAll"/>
+    	<security:intercept-url pattern="/**/*.js" access="permitAll"/>
+    	<security:intercept-url pattern="/**/*.eot" access="permitAll"/>
+    	<security:intercept-url pattern="/**/*.otf" access="permitAll"/>
+		<security:intercept-url pattern="/**/*.css" access="permitAll"/>
+		<security:intercept-url pattern="/**/*.png" access="permitAll"/>
+		<security:intercept-url pattern="/**/*.svg" access="permitAll"/>
+		<security:intercept-url pattern="/**/*.woff" access="permitAll"/>
+		<security:intercept-url pattern="/**/*.ttf" access="permitAll"/>
+		<security:intercept-url pattern="/**/*.ico" access="permitAll"/>
+    	<security:intercept-url pattern="/**" access="isAuthenticated()" />
+    	<security:form-login login-page='/index.jsp' default-target-url="/FreeSales.html" authentication-failure-url="/index.jsp?causa=wrongpass"/>
+    	<security:logout logout-success-url="/index.jsp?causa=logout" logout-url="/logout"/>
+  	</security:http>
+  	
+  	<bean id="userProvider" class="ar.com.freesalesview.server.services.authentication.UserProvider">
+  		<property name="userDetailDao" ref="userDetailDao"/>
+  	</bean>
+
+	<security:authentication-manager> 
+   		<security:authentication-provider user-service-ref="userProvider" />
+   	</security:authentication-manager>
+	
+</beans>

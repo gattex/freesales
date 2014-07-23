@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to="freeSales">
+  <inherits name='com.google.gwt.user.User'/>
+  <inherits name="com.google.gwt.i18n.I18N" />
+  <inherits name="com.google.gwt.uibinder.UiBinder" />
+  <inherits name="com.google.gwt.activity.Activity"/>
+  <inherits name="com.google.gwt.place.Place"/>
+  
+  <extend-property name="locale" values="es,en"/>
+  <set-property-fallback name="locale" value="en"/>
+  
+  <entry-point class='ar.com.freesalesview.client.FreeSales'/>
+  
+  <replace-with class="ar.com.freesalesview.client.factories.ClientFactoryBrowser">
+    <when-type-is class="ar.com.freesalesview.client.factories.ClientFactory"/>
+  </replace-with>
+
+  <source path='client'/>
+
+</module>

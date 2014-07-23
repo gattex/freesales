@@ -1,0 +1,20 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:custom="urn:import:ar.com.freesalesview.client.utils.widgets">
+	
+	<ui:with type="ar.com.freesalesview.client.i18n.Messages" field="msg" />
+	
+	<g:HTMLPanel>
+	    <div class="col" id="notifications">
+		<h2><g:Label text="{msg.dashboard_notification_title}"/></h2>
+		<div class="scroll-container">
+			<div class="scroll">
+				<div class="scroll-inner">
+					<custom:UlListPanel ui:field="notificationsUl"/>
+				</div>
+			</div>
+		</div>
+	</div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

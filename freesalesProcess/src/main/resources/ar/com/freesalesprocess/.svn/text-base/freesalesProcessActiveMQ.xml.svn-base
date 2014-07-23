@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <!-- Activemq connection factory -->
+	<bean id="amqConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<constructor-arg index="0" value="tcp://0.0.0.0:61616"/>
+	</bean>
+
+	<!-- ConnectionFactory Definition -->
+	<bean id="connectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
+		<constructor-arg ref="amqConnectionFactory" />
+	</bean>
+
+	<!-- Message Receiver Definition -->
+	<bean id="messageReceiver" class="ar.com.freesalesprocess.MessageReceiver"/>
+
+	<bean class="org.springframework.jms.listener.SimpleMessageListenerContainer">
+		<property name="connectionFactory" ref="connectionFactory" />
+		<property name="destinationName" value="EJEMPLO_QUEUE" />
+		<property name="messageListener" ref="messageReceiver" />
+	</bean>
+	
+	
+<!-- 	ENVIO DE MENSAJE -->
+<!-- 	<bean id="defaultDestination" class="org.apache.activemq.command.ActiveMQQueue"> -->
+<!-- 		<constructor-arg index="0" value="EJEMPLO_QUEUE"/> -->
+<!-- 	</bean> -->
+	
+	<!-- JmsTemplate Definition -->
+<!-- 	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate"> -->
+<!-- 		<property name="connectionFactory" ref="connectionFactory" /> -->
+<!-- 		<property name="defaultDestination" ref="defaultDestination" /> -->
+<!-- 	</bean> -->
+ 
+	<!-- Message Sender Definition -->
+<!-- 	<bean id="messageSender" class="ar.com.freesalesprocess.MessageSender"> -->
+<!-- 		<constructor-arg index="0" ref="jmsTemplate" /> -->
+<!-- 	</bean> -->
+	
+
+</beans>

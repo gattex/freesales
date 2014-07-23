@@ -1,0 +1,21 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+	<ui:with type="ar.com.freesalesview.client.i18n.Messages"
+		field="msg" />
+	<g:HTMLPanel>
+		<div class="col" id="main-content">
+			<h2>Welcome John Doe, here are some recent updates.</h2>
+			<div class="scroll-container">
+				<div class="scroll">
+					<div class="scroll-inner">
+						<div class="details-list">
+							<g:VerticalPanel ui:field="notifications" width="100%"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

@@ -1,0 +1,130 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:custom="urn:import:ar.com.freesalesview.client.utils.widgets">
+	<g:HTMLPanel>
+		<div id="body">
+			<div class="col col-small">
+				<g:Anchor href="#" styleName="pull-right link-right select-all" ui:field="selectAllRoom">Select All</g:Anchor>
+				<h3>Select Rooms</h3>
+				<div class="scroll-container">
+					<div class="scroll">
+						<div class="scroll-inner">
+							<custom:UlListPanel ui:field="groupRoomUI"/>
+						</div>
+					</div>
+				</div>
+			</div>
+	<div class="col col-mfull">
+		<input type="hidden"  ui:field="selectedDates"/>
+		<a href="#" class="pull-right link-right" id="reset-calendar">Reset</a>
+		<h3>Select Dates</h3>
+		<div class="dates-days">
+			<table>
+				<th>sun</th>
+				<th>mon</th>
+				<th>tus</th>
+				<th>wed</th>
+				<th>thu</th>
+				<th>fri</th>
+				<th>sat</th>
+			</table>
+			<div class="today-link">Today</div>
+		</div>
+		<div class="scroll-container">
+			<div class="scroll calendar-scroll">
+				<div class="scroll-inner">
+					<ul id="monthsList">
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="more">Loading more. Wait</div>
+	</div>
+
+
+			<div class="col col-small-b">
+				<g:Anchor href="#" styleName="pull-right link-right select-all" ui:field="selectAllOta">Select All</g:Anchor>
+				<h3>Select OTAs</h3>
+				<div class="scroll-container">
+					<div class="scroll">
+						<div class="scroll-inner">
+							<custom:UlListPanel ui:field="otasUI"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bottom-notice">
+			<a href="#update-openclose-popup" role="button" data-toggle="modal"
+				class="btn btn-danger btn-large pull-right" ui:field="update">Update</a>
+			<div class="pull-right show-hide">
+			    <input type="radio" name="radio" ui:field="radioOpen"/>
+			    <label for="radio1">Open</label>
+			    <input type="radio" name="radio" ui:field="radioClose"/>
+			    <label for="radio2">Close</label>
+		    </div>
+		</div>
+
+		<div class="modal hide fade" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel" aria-hidden="true" ui:field="popupInfo">
+			<form action="#">
+				<div class="modal-header">
+					<span class="icon-remove-sign" data-dismiss="modal"
+						aria-hidden="true"></span>
+					<h3>Modale title</h3>
+				</div>
+				<div class="modal-body">
+					<div class="scroll-container">
+						<div class="scroll">
+							<div class="scroll-inner">
+								<div class="holder-text">
+									<div class="desc">
+										<p>If you’ve change the name of the room please go ahead and
+											update it on this screen. If this is a new room, please add
+											it here.</p>
+									</div>
+									<ul class="results">
+										<li>
+											<strong>Selected Groups</strong>
+											<p>
+												<span ui:field="preSelectedGroups"/>
+											</p>
+										</li>
+										<li>
+											<strong>Selected Rooms</strong>
+											<p>
+												<span ui:field="preSelectedRooms"/>
+											</p>
+										</li>
+										<li>
+											<strong>Selected Date</strong>
+											<p>
+												<span ui:field="preSelectedDates"/>
+											</p>
+										</li>
+										<li>
+											<strong>Selected OTAs</strong>
+											<p>
+												<span ui:field="preSelectedOtas"/>
+											</p>
+										</li>
+									</ul>
+									<div class="desc bot">
+										<p>Some closing text here, we should be able to place html
+											inside the modals, these modals will work like on the link
+											provided. </p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<g:Button styleName="btn btn-primary pull-left" ui:field="cancelPopupInfo">Cancel and edit</g:Button>
+					<g:Button styleName="btn btn-danger" ui:field="submit">Submit</g:Button>
+				</div>
+			</form>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

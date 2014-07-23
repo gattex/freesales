@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+	<session-factory>
+		<property name="hibernate.connection.autocommit">false</property>
+		<property name="hibernate.jdbc.use_get_generated_keys">true</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="javax.persistence.validation.mode">none</property>  
+	
+		<!-- Clases persistidas -->
+		<mapping class="ar.com.freesales.entity.ota.Ota"/>
+		<mapping class="ar.com.freesales.entity.ota.Booking"/>
+		<mapping class="ar.com.freesales.entity.ota.Splendia"/>
+		<mapping class="ar.com.freesales.entity.hotel.Hotel"/>
+		<mapping class="ar.com.freesales.entity.hotel.HotelOta"/>
+		<mapping class="ar.com.freesales.entity.room.HotelOtaRoomType"/>
+		<mapping class="ar.com.freesales.entity.room.BookingAdditionalInfo"/>
+		<mapping class="ar.com.freesales.entity.room.RoomType"/>
+		<mapping class="ar.com.freesales.entity.user.UserDetail"/>
+		<mapping class="ar.com.freesales.entity.user.UserRole"/>
+		<mapping class="ar.com.freesales.entity.changelog.ChangeLog"/>
+		<mapping class="ar.com.freesales.entity.changelog.UnitOfWork"/>
+		<mapping class="ar.com.freesales.entity.changelog.DateBatch"/>
+		<mapping class="ar.com.freesales.entity.changelog.DateBatchSequence"/>
+
+	</session-factory>
+	
+</hibernate-configuration>

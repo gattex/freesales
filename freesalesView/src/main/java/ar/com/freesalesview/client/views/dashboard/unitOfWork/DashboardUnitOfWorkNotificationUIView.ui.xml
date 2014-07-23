@@ -1,0 +1,26 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+	<g:HTMLPanel>
+		<article>
+			<div class="more">
+				<a href="#" class="btn btn-danger btn-mini btn-more">Hide</a>
+			</div>
+			<div class="pic">
+				<img src="img/pic_avatar.png" alt="" />
+			</div>
+			<h4><g:Label ui:field="summary"/> </h4>
+			<div class="data"><g:Label ui:field="dateAction"/></div>
+			<div class="table" style="display: block;" id="mitabla">
+				<div class="head">
+					<div class="ota">OTA</div>
+					<div class="rooms">Rooms</div>
+					<div class="dates">Dates</div>
+					<div class="status">Status</div>
+				</div>
+				<g:HTMLPanel ui:field="items"/>
+			</div>
+		</article>
+	</g:HTMLPanel>
+</ui:UiBinder> 

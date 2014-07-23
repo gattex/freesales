@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
+  
+  	<configuration>
+		<date-format>dd/MM/yyyy</date-format>
+	</configuration>
+  
+	<!--Otas mapping -->
+	<mapping>
+  		<class-a>ar.com.freesales.entity.ota.Booking</class-a>
+  		<class-b>ar.com.freesalesview.client.dtos.OtaDTO</class-b>
+	</mapping>
+	
+	<mapping>
+  		<class-a>ar.com.freesales.entity.ota.Splendia</class-a>
+  		<class-b>ar.com.freesalesview.client.dtos.OtaDTO</class-b>
+	</mapping>
+	
+	<!--Rooms mapping -->
+	<mapping>
+  		<class-a>ar.com.freesales.dto.RoomCategoryDTO</class-a>
+  		<class-b>ar.com.freesalesview.client.dtos.GroupRoomDTO</class-b>
+  		<field>
+  			<a>roomCategoryEnum</a>
+  			<b>category</b>
+  		</field>
+  		<field>
+			<a>roomSubcategoryDTOs</a>
+  			<b>subcategories</b>
+  		</field>
+	</mapping>
+	
+	<mapping>
+  		<class-a>ar.com.freesales.dto.RoomSubcategoryDTO</class-a>
+  		<class-b>ar.com.freesalesview.client.dtos.RoomDTO</class-b>
+  		<field>
+  			<a>roomSubcategoryEnum.descripcion</a>
+  			<b>subcategory</b>
+  		</field>
+  		<field>
+  			<a>idRoomType</a>
+  			<b>idSubcategory</b>
+  		</field>
+	</mapping>
+	
+	<!--Unit of work mapping -->
+	
+	<mapping>
+  		<class-a>ar.com.freesales.entity.changelog.UnitOfWork</class-a>
+  		<class-b>ar.com.freesalesview.client.dtos.UnitOfWorkDTO</class-b>
+  		<field-exclude>
+  		    <a>actionEnum</a>
+  		    <b>actionEnum</b>
+  		</field-exclude>
+  		<field>
+  			<a>userDetail.name</a>
+  			<b>userName</b>
+  		</field>
+  		<field>
+			<a>userDetail.lastName</a>
+  			<b>lastName</b>
+  		</field>
+  		<field>
+  		    <a>date</a>
+  		    <b>dateAction</b>
+  		</field>
+  		<field custom-converter-id="changeLongToUnitOfWork">
+			<a>changeLogs</a>
+  			<b>items</b>
+  		</field>
+	</mapping>
+	
+	<mapping>
+  		<class-a>ar.com.freesales.entity.changelog.ChangeLog</class-a>
+  		<class-b>ar.com.freesalesview.client.dtos.UnitOfWorkItemDTO</class-b>
+  		<field>
+  			<a>hotelOta.ota.name</a>
+  			<b>otaName</b>
+  		</field>
+  		<field>
+  			<a>roomType.roomCategoryEnum</a>
+  			<b>roomCategory</b>
+  		</field>
+  		<field>
+  			<a>roomType.roomSubcategoryEnum.descripcion</a>
+  			<b>roomSubcategory</b>
+  		</field>
+	</mapping>
+</mappings>
+

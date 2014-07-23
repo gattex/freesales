@@ -1,0 +1,17 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	
+	<ui:with type="ar.com.freesalesview.client.i18n.Messages" field="msg" />
+
+	<g:HTMLPanel>
+		<div class="pull-right">
+			<g:Anchor ui:field="detail" href="#" styleName="btn btn-danger btn-mini" text="{msg.dashboard_notification_single_detail}"/>
+		</div>
+		<div ui:field="divColorNotification">
+			<span ui:field="spanIconNotification"></span>
+		</div>
+		<p><g:Label ui:field="notification"/></p>
+		<p class="date"><g:Label ui:field="dateAndTime"/></p>
+	</g:HTMLPanel>
+</ui:UiBinder> 

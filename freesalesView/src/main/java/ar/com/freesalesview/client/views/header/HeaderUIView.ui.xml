@@ -1,0 +1,53 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	
+	<g:HTMLPanel>
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<a class="brand" href="#">OTA Manage</a>
+					<p class="navbar-text pull-right">
+						<a href="#" class="navbar-link">
+							<span ui:field="userLogged"/>
+							<img src="img/pic_avatar.png" alt="" />
+						</a>
+						<g:Anchor ui:field="settingsLink" href="#">
+							<span class="icon-cog"></span>
+						</g:Anchor>
+						<a href="logout">
+							<span class="icon-off"></span>
+						</a>
+					</p>
+					<ul class="nav">
+						<li>
+							<g:Anchor ui:field="dashboardLink" styleName="linksNavBarClick" href="#">
+								<span class="icon-th-large"></span>
+								Dashboard
+							</g:Anchor>
+						</li>
+						<li>
+							<g:Anchor ui:field="rateUpdateLink" href="#">
+								<span class="icon-caret-up"></span>
+								<span class="icon-caret-down"></span>
+								Rate Update
+							</g:Anchor>
+						</li>
+						<li>
+							<g:Anchor ui:field="availabilityLink" href="#">
+								<span class="icon-plus-sign-alt"></span>
+								Availability
+							</g:Anchor>
+						</li>
+						<li>
+							<g:Anchor ui:field="openCloseLink" href="#">
+								<span class="icon-adjust"></span>
+								Open-Close
+							</g:Anchor>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

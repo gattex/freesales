@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
+
+<Configure class="org.mortbay.jetty.webapp.WebAppContext">
+      <Set name="systemClasses"> 
+                <Array type="java.lang.String"> 
+                        <Item>java.</Item> 
+                        <Item>javax.servlet.</Item> 
+                        <Item>javax.xml.</Item> 
+                        <Item>org.mortbay.</Item> 
+                        <Item>org.xml.</Item> 
+                        <Item>org.w3c.</Item> 
+                        <Item>org.apache.commons.logging.</Item> 
+                        <Item>org.apache.log4j.</Item> 
+                        <Item>org.slf4j.</Item>
+                        <Item>org.springframework.META-INF</Item>  
+                </Array> 
+        </Set>
+
+        
+	<New id="freesalesDataSource" class="org.mortbay.jetty.plus.naming.Resource">
+		<Arg></Arg>
+		<Arg>java:comp/env/jdbc/freesalesDS</Arg>
+		<Arg>
+			<New class="com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource">
+				<Set name="URL">jdbc:mysql://freesalestest.cjegf4csuszl.sa-east-1.rds.amazonaws.com:3306/freesalestest</Set>
+				<Set name="User">freesales</Set>
+				<Set name="Password">freesales</Set>
+			</New>
+		</Arg>
+	</New>
+</Configure>

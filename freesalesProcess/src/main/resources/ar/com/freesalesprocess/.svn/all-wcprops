@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/115/trunk/freesales/freesalesProcess/src/main/resources/ar/com/freesalesprocess
+END
+freesalesProcessApplicationContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/!svn/ver/115/trunk/freesales/freesalesProcess/src/main/resources/ar/com/freesalesprocess/freesalesProcessApplicationContext.xml
+END
+freesalesProcessActiveMQ.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/!svn/ver/115/trunk/freesales/freesalesProcess/src/main/resources/ar/com/freesalesprocess/freesalesProcessActiveMQ.xml
+END

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration>
+        
+  <appender name="ConsoleAppender" class="org.apache.log4j.ConsoleAppender">
+    <layout class="org.apache.log4j.PatternLayout">
+	    <param name="ConversionPattern" value="%-7p %d{dd/MM/yy-HH:mm:ss,SSS} %.8t %-30.30c{1}| %m%n" />
+    </layout>
+  </appender>
+
+  <category name="ar.com.freesales">
+  	<priority value="debug"/>
+  	<appender-ref ref="ConsoleAppender" />
+  </category>
+
+ <category name="org">
+  	<priority value="info"/>
+  	<appender-ref ref="ConsoleAppender" />
+  </category>
+  
+  
+<!--         <category name="org.hibernate.SQL">-->
+<!--               <priority value="debug"/>-->
+<!--               <appender-ref ref="ConsoleAppender"/>-->
+<!--       </category>-->
+<!-- -->
+<!--        <category name="org.hibernate.type">-->
+<!--                <priority value="TRACE"/>-->
+<!--                <appender-ref ref="ConsoleAppender"/>-->
+<!--        </category>-->
+
+
+</log4j:configuration> 

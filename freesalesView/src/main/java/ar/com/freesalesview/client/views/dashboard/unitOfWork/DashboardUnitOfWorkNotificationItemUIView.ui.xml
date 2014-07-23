@@ -1,0 +1,33 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<g:HTMLPanel>
+	<div class="item">
+		<div class="ota"><g:Label ui:field="otaName"/></div>
+			<div class="row">
+				<div class="rooms"><g:Label ui:field="roomName"/></div>
+				<div class="dates"><span ui:field="dates"/></div>
+<!-- 				<div class="status"> -->
+					<g:VerticalPanel ui:field="changeStatusPanel"/>
+<!-- 				</div> -->
+		</div>
+<!-- 		<div class="hidden"> -->
+<!-- 			<div class="row"> -->
+<!-- 					<div class="rooms">Excecutive Smoking</div> -->
+<!-- 					<div class="dates"> -->
+<!-- 						From April 15th - 19th -->
+<!-- 						<br /> -->
+<!-- 						April 21st -->
+<!-- 					</div> -->
+<!-- 				<div class="status"> -->
+<!-- 					<span class="icon-ok-sign"></span> -->
+<!-- 					<span class="icon-ok-sign"></span> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 		<div class="add-dates"> -->
+<!-- 			<a href="#">View all dates updated...</a> -->
+<!-- 		</div> -->
+	</div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

@@ -1,0 +1,36 @@
+#wait-box {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  background-color: #333;
+  padding: 5px;
+}
+#wait-box .wait-box-item{
+  color: #FFF;
+  font-weight: bold;  
+}
+#wait-box {
+  filter:alpha(opacity=60); /* For IE8 and earlier */
+}
+#wait-box {
+  opacity:0.6;
+}
+
+.hide{
+  display: none;
+}
+
+.loginError {
+	color: #ff0000;
+	background-color: #ffEEEE;
+	border: 3px solid #ff0000;
+	padding: 8px;
+	margin: 16px;
+}
+.logoutCorrect {
+   background-color: #CEF5F0;
+   border: 2px solid #8080F8;
+   color: #1A1A71;
+   margin: 16px;
+   padding: 8px;
+}
